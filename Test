@@ -1,0 +1,59 @@
+import random
+
+
+class Character:
+    
+    def selectclass(self):
+        while True:
+            option = input("1 - strenght \n2 - agility \n3 - intelligence \nSelect a class: " )
+            if option in ["1", "2", "3"]:
+                return int(option)
+            else:
+                print("Invalid input, try again!")
+            
+    
+    def classgenerator(self, clas):
+        if clas == 1:
+            return random.randrange(27, 39)
+
+        elif clas == 2:
+            return random.randrange(27, 39)
+
+        elif clas == 3:
+            return random.randrange(27, 39)
+
+        else:
+            return random.randrange(12, 21)
+      
+        
+    def characterclass(self, clas):
+        if clas == 1:
+            return "Heavy"
+
+        elif clas == 2:
+            return "Assasin"
+
+        elif clas == 3:
+            return "Wizard"
+
+        
+              
+    def __init__(self, name):
+        self.name = name
+        self.optionclas = self.selectclass()
+        self.type = self.characterclass(self.optionclas)
+        self.strenght = self.classgenerator(self.selectclass)
+        self.agility = self.classgenerator(self.selectclass)
+        self.intelligence = self.classgenerator(self.selectclass)
+
+
+    def get_stats(self):
+        print("Name:", self.name, "\nClass:", self.type, "\nStrenght:", self.strenght, "\nAgility:", self.agility, "\nIntelligence:", self.intelligence)
+        
+        
+
+
+maxvell = Character("Quensi")
+
+print(maxvell.name)
+maxvell.get_stats()
