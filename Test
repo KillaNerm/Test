@@ -11,19 +11,24 @@ class Character:
             else:
                 print("Invalid input, try again!")
             
-    
-    def classgenerator(self, clas):
-        if clas == 1:
+        
+    def classstrenght(self, clas):
+        if clas == 1:            
             return random.randrange(27, 39)
-
-        elif clas == 2:
-            return random.randrange(27, 39)
-
-        elif clas == 3:
-            return random.randrange(27, 39)
-
         else:
             return random.randrange(12, 21)
+             
+    def classagility(self, clas):
+        if clas == 2:            
+            return random.randrange(27, 39)
+        else:
+            return random.randrange(12, 21)  
+                
+    def classintelligence(self, clas):
+        if clas == 3:            
+            return random.randrange(27, 39)
+        else:
+            return random.randrange(12, 21) 
       
         
     def characterclass(self, clas):
@@ -42,9 +47,9 @@ class Character:
         self.name = name
         self.optionclas = self.selectclass()
         self.type = self.characterclass(self.optionclas)
-        self.strenght = self.classgenerator(self.selectclass)
-        self.agility = self.classgenerator(self.selectclass)
-        self.intelligence = self.classgenerator(self.selectclass)
+        self.strenght = self.classstrenght(self.optionclas)
+        self.agility = self.classagility(self.optionclas)
+        self.intelligence = self.classintelligence(self.optionclas)
 
 
     def get_stats(self):
